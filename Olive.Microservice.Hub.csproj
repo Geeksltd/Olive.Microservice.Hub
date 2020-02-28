@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>Geeks Ltd</Authors>
+    <Company>Geeks Ltd</Company>
+    <Description>A plugin for Olive Framework</Description>
+    <Copyright>Copyright ©2020 Geeks Ltd - All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/Geeksltd/Olive</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GCop.All.Geeks" Version="2.6.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Olive" Version="2.1.180" />
+    <PackageReference Include="Olive.ApiClient" Version="2.2.103" />
+    <PackageReference Include="Olive.Audit" Version="2.1.103" />
+    <PackageReference Include="Olive.Entities" Version="2.1.137" />
+    <PackageReference Include="Olive.Entities.Data" Version="2.1.145" />
+    <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.107" />
+    <PackageReference Include="Olive.Integration" Version="1.0.7" />
+    <PackageReference Include="Olive.Mvc.Security" Version="2.2.105" />
+    <PackageReference Include="Olive.Encryption" Version="2.2.102" />
+    <PackageReference Include="Olive.PassiveBackgroundTasks" Version="1.0.0" />
+    <PackageReference Include="Olive.Web" Version="2.2.105" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+  </ItemGroup>
+
+</Project>
