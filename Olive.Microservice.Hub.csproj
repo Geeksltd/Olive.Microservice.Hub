@@ -7,24 +7,51 @@
     <Description>A plugin for Olive Framework</Description>
     <Copyright>Copyright ©2020 Geeks Ltd - All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/Geeksltd/Olive</PackageProjectUrl>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GCop.All.Geeks" Version="2.6.1" />
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="4.0.0" />
+    <PackageReference Include="AppContentService.HubApi" Version="180720.11.4435" />
+    <PackageReference Include="AWSSDK.KeyManagementService" Version="3.3.100.1" />
+    <PackageReference Include="AWSSDK.SecretsManager" Version="3.3.101.78" />
+    <PackageReference Include="AWSSDK.SecurityToken" Version="3.3.100.1" />    
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />        
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+    <PackageReference Include="GCop.All.Geeks" Version="2.6.1" />
+    <PackageReference Include="Hangfire" Version="1.7.9" />
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+    <PackageReference Include="GCop.All.Geeks" Version="2.6.1" />
     <PackageReference Include="Olive" Version="2.1.180" />
-    <PackageReference Include="Olive.ApiClient" Version="2.2.103" />
     <PackageReference Include="Olive.Audit" Version="2.1.103" />
-    <PackageReference Include="Olive.Entities" Version="2.1.137" />
-    <PackageReference Include="Olive.Entities.Data" Version="2.1.145" />
     <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.107" />
     <PackageReference Include="Olive.Integration" Version="1.0.7" />
+    <PackageReference Include="Olive.ApiClient" Version="2.2.103" />
+    <PackageReference Include="Olive.Aws" Version="2.2.112" />
+    <PackageReference Include="Olive.Aws.EventBus" Version="2.1.122" />
+    <PackageReference Include="Olive.Entities" Version="2.1.137" />
+    <PackageReference Include="Olive.Entities.Data" Version="2.1.145" />
+    <PackageReference Include="Olive.Entities.Data.Replication" Version="2.1.141" />
+    <PackageReference Include="Olive.Entities.Data.Replication.Mvc.Extensions" Version="1.0.1" />
+    <PackageReference Include="Olive.EventBus" Version="2.1.117" />
+    <PackageReference Include="Olive.Excel" Version="1.0.9" />
+    <PackageReference Include="Olive.GlobalSearch.Source" Version="1.0.40" />
+    <PackageReference Include="Olive.Hangfire" Version="2.1.110" />
+    <PackageReference Include="Olive.Microservices" Version="2.1.103" />
+    <PackageReference Include="Olive.Mvc" Version="2.1.144" />
+    <PackageReference Include="Olive.PassiveBackgroundTasks" Version="1.0.0" />
+    <PackageReference Include="Olive.PDF" Version="2.1.104" />
     <PackageReference Include="Olive.Mvc.Security" Version="2.2.105" />
     <PackageReference Include="Olive.Encryption" Version="2.2.102" />
-    <PackageReference Include="Olive.PassiveBackgroundTasks" Version="1.0.0" />
+    <PackageReference Include="Olive.Security.Aws" Version="2.2.103" />
+    <PackageReference Include="Olive.Security.Impersonation" Version="2.1.103" />
+    <PackageReference Include="Olive.Testing" Version="2.1.115" />
     <PackageReference Include="Olive.Web" Version="2.2.105" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+    
   </ItemGroup>
 
 </Project>
