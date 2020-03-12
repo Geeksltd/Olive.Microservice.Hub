@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Olive.Mvc;
 
@@ -38,19 +38,23 @@ namespace Olive.Hub
                 return @"<div class=""empty-list""> There are no services to display. s</div>";
         }
 
-        private IEnumerable<string> GenerateItems()
+        private string GenerateItems()
         {
+            var items = new StringBuilder();
+
             foreach (var listItem in Model.Items)
             {
                 var item = listItem.Item;
 
-                yield return $@"<div class='item'>
+                items.Append($@"<div class='item'>
                                      <div style='display:block; float:left; margin:15px; width:150px; height:150px;border:1px solid gray;'>
                                         {item}
                                         <iframe style='width:150px; height:150px; border: none' src='{listItem.ServiceUrl}?ticket={info.Ticket}'> </iframe>
                                      </div>
-                                  </div>";
+                                  </div>");
             }
+
+            return items.ToString();
         }
     }
 }

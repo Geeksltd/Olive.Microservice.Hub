@@ -28,45 +28,45 @@ namespace Olive.Hub
                                 <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
                                 <meta http-equiv=""refresh"" content=""{TimeOut}"">
                                 <title>{ViewData["Title"]}</title>
-                                <link rel='stylesheet' href=""styles/theme.min.css?v=%APP_VERSION%"" type='text/css' />
-                                <link rel='stylesheet' href=""styles/hub/hub.min.css?v=%APP_VERSION%"" type='text/css' />
-                                <link rel=""icon"" media=""all"" type=""image/x-icon"" href=""img/favicon.png"" />
+                                <link rel='stylesheet' href=""{Microservice.Me.Url()}styles/theme.min.css?v=%APP_VERSION%"" type='text/css' />
+                                <link rel='stylesheet' href=""{Microservice.Me.Url()}styles/hub/hub.min.css?v=%APP_VERSION%"" type='text/css' />
+                                <link rel=""icon"" media=""all"" type=""image/x-icon"" href=""{Microservice.Me.Url()}img/favicon.png"" />
                                 <link rel=""shortcut icon"" href=""img/favicon.ico"">
 
                                 <meta name=""apple-mobile-web-app-capable"" content=""yes"">
                                 <meta name=""apple-mobile-web-app-status-bar-style"" content=""#42AAA9"">
                                 <meta name=""apple-mobile-web-app-title"" content=""Geeks Hub Application"">
 
-                                <link rel=""mask-icon"" href=""/images/fav/safari-pinned-tab.svg"" color=""#5bbad5"" style=""user-select: text;"">
-                                <link rel=""apple-touch-startup-image"" media=""(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"" href=""/img/pwa/splash/iphonexsmax_splash.png"" style=""user-select: text;"">
-                                <link rel=""apple-touch-startup-image"" media=""(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"" href=""/img/pwa/splash/iphonexr_splash.png"" style=""user-select: text;"">
-                                <link rel=""apple-touch-startup-image"" media=""(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"" href=""/img/pwa/splash/iphonex_splash.png"" style=""user-select: text;"">
-                                <link rel=""apple-touch-startup-image"" media=""(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"" href=""/img/pwa/splash/iphone6_splash.png"" style=""user-select: text;"">
-                                <link rel=""apple-touch-startup-image"" media=""(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)"" href=""/img/pwa/splash/iphoneplus_splash.png"" style=""user-select: text;"">
-                                <link rel=""apple-touch-startup-image"" media=""(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"" href=""/img/pwa/splash/iphone5_splash.png"" style=""user-select: text;"">
+                                <link rel=""mask-icon"" href=""{Microservice.Me.Url()}images/fav/safari-pinned-tab.svg"" color=""#5bbad5"" style=""user-select: text;"">
+                                <link rel=""apple-touch-startup-image"" media=""(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"" href=""{Microservice.Me.Url()}img/pwa/splash/iphonexsmax_splash.png"" style=""user-select: text;"">
+                                <link rel=""apple-touch-startup-image"" media=""(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"" href=""{Microservice.Me.Url()}img/pwa/splash/iphonexr_splash.png"" style=""user-select: text;"">
+                                <link rel=""apple-touch-startup-image"" media=""(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"" href=""{Microservice.Me.Url()}img/pwa/splash/iphonex_splash.png"" style=""user-select: text;"">
+                                <link rel=""apple-touch-startup-image"" media=""(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"" href=""{Microservice.Me.Url()}img/pwa/splash/iphone6_splash.png"" style=""user-select: text;"">
+                                <link rel=""apple-touch-startup-image"" media=""(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)"" href=""{Microservice.Me.Url()}img/pwa/splash/iphoneplus_splash.png"" style=""user-select: text;"">
+                                <link rel=""apple-touch-startup-image"" media=""(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"" href=""{Microservice.Me.Url()}img/pwa/splash/iphone5_splash.png"" style=""user-select: text;"">
 
-                                <link rel=""apple-touch-icon"" sizes=""57x57"" href=""img/pwa/icon57.png"">
-                                <link rel=""apple-touch-icon"" sizes=""76x76"" href=""img/pwa/icon76.png"">
-                                <link rel=""apple-touch-icon"" sizes=""114x114"" href=""img/pwa/icon114.png"">
-                                <link rel=""apple-touch-icon"" sizes=""167x167"" href=""img/pwa/icon167.png"">
-                                <link rel=""apple-touch-icon"" sizes=""144x144"" href=""img/pwa/icon144.png"">
-                                <link rel=""apple-touch-icon"" sizes=""152x152"" href=""img/pwa/icon152.png"">
-                                <link rel=""apple-touch-icon"" sizes=""180x180"" href=""img/pwa/icon180.png"">
-                                <link rel=""apple-touch-icon"" sizes=""192x192"" href=""img/pwa/icon192.png"">
+                                <link rel=""apple-touch-icon"" sizes=""57x57"" href=""{Microservice.Me.Url()}img/pwa/icon57.png"">
+                                <link rel=""apple-touch-icon"" sizes=""76x76"" href=""{Microservice.Me.Url()}img/pwa/icon76.png"">
+                                <link rel=""apple-touch-icon"" sizes=""114x114"" href=""{Microservice.Me.Url()}img/pwa/icon114.png"">
+                                <link rel=""apple-touch-icon"" sizes=""167x167"" href=""{Microservice.Me.Url()}img/pwa/icon167.png"">
+                                <link rel=""apple-touch-icon"" sizes=""144x144"" href=""{Microservice.Me.Url()}img/pwa/icon144.png"">
+                                <link rel=""apple-touch-icon"" sizes=""152x152"" href=""{Microservice.Me.Url()}img/pwa/icon152.png"">
+                                <link rel=""apple-touch-icon"" sizes=""180x180"" href=""{Microservice.Me.Url()}img/pwa/icon180.png"">
+                                <link rel=""apple-touch-icon"" sizes=""192x192"" href=""{Microservice.Me.Url()}img/pwa/icon192.png"">
 
-                                <meta name=""msapplication-TileImage"" content=""img/pwa/icon144.png"">
+                                <meta name=""msapplication-TileImage"" content=""{Microservice.Me.Url()}img/pwa/icon144.png"">
                                 <meta name=""msapplication-TileColor"" content=""green"">
                                 <meta name=""msapplication-starturl"" content=""/"">
 
                                 <!-- Manifest.json-->
-                                <link rel=""manifest"" href=""manifest.json"">
+                                <link rel=""manifest"" href=""{Microservice.Me.Url()}manifest.json"">
                                 <meta name=""mobile-web-app-capable"" content=""yes"">
                                 <meta name=""theme-color"" content=""#42AAA9"">
 
                                 <script type=""text/javascript"">
                                     window[""services""] = {Service.ToJson()?.Raw()}
                                 </script>
-                                <script src=""lib/requirejs/require.js"" data-main=""/scripts/references.js?v=%APP_VERSION%""></script>
+                                <script src=""{Microservice.Me.Url()}lib/requirejs/require.js"" data-main=""{Microservice.Me.Url()}scripts/references.js?v=%APP_VERSION%""></script>
                             </head>
                             <body>
                                 <div class=""container-fluid p-0"">
@@ -77,7 +77,10 @@ namespace Olive.Hub
                                             <div class=""content-body"">
                                                 { await GenerateUserInfo()}                    
                                                 <service of=""hub"">
+                                                    <main class=""hub-service"">
+                                                        <input type=""hidden"" id=""page_meta_title"" value=""{ViewData["Title"]}"" />
                                                     {await RenderBodyAjax()}
+                                                    </main>
                                                     <div class=""feature-frame-view view-body"" id=""iFrameHolder"">
                                                         <iframe class='view-frame embed-responsive-item w-100 h-100' name='view-frame'></iframe>
                                                     </div>

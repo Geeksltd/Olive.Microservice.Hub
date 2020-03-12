@@ -19,32 +19,32 @@ namespace Olive.Hub
                                <ul class='features-sub-menu feature-top-menu d-none d-lg-flex'>
                                </ul>
                                <script id=""sumMenu-template"" type=""text/x-handlebars-template"">
-                                  {{#menus}}
+                                  {{{{#menus}}}}
                                   <ul class=""nav navbar-nav"">
-                                     {{#Children}}
-                                     <li class=""feature-menu-item"" data-nodeid=""{{ID}}"">
-                                        <i class=""{{Icon}}"" aria-hidden=""true""></i>
-                                        <a href=""{{LoadUrl}}"" data-service="""" {{#if UseIframe}} {{else}} data-redirect=""ajax"" {{/if}}>{{Title}}</a>
+                                     {{{{#Children}}}}
+                                     <li class=""feature-menu-item"" data-nodeid=""{{{{ID}}}}"">
+                                        <i class=""{{{{Icon}}}}"" aria-hidden=""true""></i>
+                                        <a href=""{{{{LoadUrl}}}}"" data-service="""" {{{{#if UseIframe}}}} {{{{else}}}} data-redirect=""ajax"" {{{{/if}}}}>{{{{Title}}}}</a>
                                         <ul>
-                                           {{#Children}}
-                                           <li class=""feature-menu-item"" data-nodeid=""{{ID}}"">
-                                              <i class=""{{Icon}}"" aria-hidden=""true""></i>
-                                              <a href=""{{LoadUrl}}"" data-service="""" {{#if UseIframe}} {{else}} data-redirect=""ajax"" {{/if}}>{{Title}}</a>
+                                           {{{{#Children}}}}
+                                           <li class=""feature-menu-item"" data-nodeid=""{{{{ID}}}}"">
+                                              <i class=""{{{{Icon}}}}"" aria-hidden=""true""></i>
+                                              <a href=""{{{{LoadUrl}}}}"" data-service="""" {{{{#if UseIframe}}}} {{{{else}}}} data-redirect=""ajax"" {{{{/if}}}}>{{{{Title}}}}</a>
                                               <ul>
-                                                 {{#Children}}
-                                                 <li class=""feature-menu-item"" data-nodeid=""{{ID}}"">
-                                                    <i class=""fa {{Icon}}"" aria-hidden=""true""></i>
-                                                    <a href=""{{LoadUrl}}"" data-service="""" {{#if UseIframe}} {{else}} data-redirect=""ajax"" {{/if}}>{{Title}}</a>
+                                                 {{{{#Children}}}}
+                                                 <li class=""feature-menu-item"" data-nodeid=""{{{{ID}}}}"">
+                                                    <i class=""fa {{{{Icon}}}}"" aria-hidden=""true""></i>
+                                                    <a href=""{{{{LoadUrl}}}}"" data-service="""" {{{{#if UseIframe}}}} {{{{else}}}} data-redirect=""ajax"" {{{{/if}}}}>{{{{Title}}}}</a>
                                                  </li>
-                                                 {{/Children}}
+                                                 {{{{/Children}}}}
                                               </ul>
                                            </li>
-                                           {{/Children}}
+                                           {{{{/Children}}}}
                                         </ul>
                                      </li>
-                                     {{/Children}}
+                                     {{{{/Children}}}}
                                   </ul>
-                                  {{/menus}}
+                                  {{{{/menus}}}}
                                </script>
                             </div>";
 

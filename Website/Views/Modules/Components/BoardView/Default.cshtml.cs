@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using Domain;
 using Olive.Mvc;
@@ -27,12 +28,16 @@ namespace Olive.Hub
             return Task.Run(() => result);
         }
 
-        private IEnumerable<string> GenerateChilds()
+        private string GenerateChilds()
         {
+            var items = new StringBuilder();
+
             foreach (var widget in Model.Item.GetWidgets(User))
             {
-                yield return $"<li>{widget.Render(info.FeatureId).Raw()}</li>";
+                items.Append($"<li>{widget.Render(info.FeatureId).Raw()}</li>");
             }
+
+            return items.ToString();
         }
     }
 }

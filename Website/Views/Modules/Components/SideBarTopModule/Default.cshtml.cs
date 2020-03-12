@@ -16,7 +16,7 @@ namespace Olive.Hub
                             {Html.StartupActionsJson()}
                             <div class=""logo-wrapper"">
                                 <div>
-                                    <a name=""Logo"" class=""logo"" href=""/"" default-button=""true""><img src=""img/Logo.png"" alt=""Logo"" /></a>
+                                    <a name=""Logo"" class=""logo"" href=""/"" default-button=""true""><img src=""{Microservice.Me.Url()}img/Logo.png"" alt=""Logo"" /></a>
                                 </div>
                             </div>
                         {await new GlobalSearchView(new ViewModel.GlobalSearch()).Render()}

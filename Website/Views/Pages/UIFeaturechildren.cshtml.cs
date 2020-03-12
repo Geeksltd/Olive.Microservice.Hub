@@ -1,6 +1,7 @@
 ﻿using Olive.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Olive.Hub
@@ -14,7 +15,7 @@ namespace Olive.Hub
 
         protected override Task<string> RenderBodyAjax()
         {
-            var vm = ViewBag.Info as ViewModel.ChildFeaturesList;
+            //var vm = ViewBag.Info as ViewModel.ChildFeaturesList;
 
             var result = $@"<form data-module=""ChildFeaturesList"" method=""get"" action=""{Url.Current()}"" data-redirect=""ajax"" class=""feature-children"">
                                {Html.StartupActionsJson()}
@@ -41,13 +42,15 @@ namespace Olive.Hub
                 return @"<div class=""empty-list""> There are no features to display.</div>";
         }
 
-        private IEnumerable<string> GenerateItems()
+        private string GenerateItems()
         {
+            var childItems = new StringBuilder();
+
             foreach (var listItem in Model.Items)
             {
                 var item = listItem.Item;
 
-                yield return $@"<div class='item'>
+                childItems.Append($@"<div class='item'>
                                  <a name=""Title"" class=""feature-button olive-instant-search-item badge-number"" href=""{item.LoadUrl}"" id=""{item.ID}"" {"data-redirect='ajax'".OnlyWhen(!item.UseIframe).Raw()} data-badgeurl=""{item.GetBadgeUrl()}"" data-service=""{item.Service?.Name}"" style=""color:{item.GetColour()};"">
                                     <i class=""{item.GetIcon()}"" aria-hidden=""true""></i>
                                     {item.GetTitle(Model.Parent)}
@@ -55,8 +58,10 @@ namespace Olive.Hub
                                        {item.GetDescription()}
                                     </small>
                                 </a>
-                              </div>";
+                              </div>");
             }
+
+            return childItems.ToString();
         }
     }
 }
