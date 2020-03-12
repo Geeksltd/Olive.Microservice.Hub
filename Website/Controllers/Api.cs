@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Controllers
+namespace Olive.Hub
 {
     [Route("api")]
     public class ApiController : BaseController

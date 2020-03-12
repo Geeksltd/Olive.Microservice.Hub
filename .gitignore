@@ -5,3 +5,8 @@
 /.vs/Olive.Microservice.Hub
 /bin/Debug
 /obj
+
+*.css
+*.js
+*.map
+/Website/wwwroot/lib

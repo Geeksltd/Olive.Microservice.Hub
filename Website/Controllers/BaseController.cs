@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Olive;
+using Olive.Mvc;
 using System;
+using System.Threading.Tasks;
 
-namespace Controllers
+namespace Olive.Hub
 {
     public class BaseController : Olive.Mvc.Controller
     {
@@ -18,8 +19,6 @@ namespace Controllers
         protected override string GetDefaultBrowserTitle(ActionExecutingContext context)
             => Microservice.Me.Name + " > " + base.GetDefaultBrowserTitle(context);
 
-
-
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             ViewData["ExecutionStart"] = LocalTime.Now;
@@ -32,8 +31,18 @@ namespace Controllers
             var start = (DateTime)ViewData["ExecutionStart"];
             Log.Info("Finished executing " + context.ActionDescriptor.DisplayName + " in " + LocalTime.Now.Subtract(start).ToNaturalTime());
         }
-    }
 
+        public async Task<ContentResult> View<TView>(IViewModel model)
+        {
+            return Content(await model.Render<TView>(ViewData), "text/html");
+        }
+
+        public async Task<ContentResult> View<TView>(IViewModel model, IViewModel second)
+        {
+            return Content(await model.Render<TView>(ViewData, second), "text/html");
+        }
+
+    }
 }
 
 namespace ViewComponents

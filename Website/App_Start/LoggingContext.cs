@@ -1,8 +1,5 @@
 ﻿using Olive;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Website
 {
@@ -24,9 +21,6 @@ namespace Website
             }
         }
 
-        public void Dispose()
-        {
-            Console.WriteLine("Finished running " + Name);
-        }
+        public void Dispose() => Console.WriteLine("Finished running " + Name);
     }
 }

@@ -1,44 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Transactions;
-using System.Web;
+﻿using Microsoft.AspNetCore.Mvc;
 using Olive;
-using Olive.Entities;
 using Olive.Mvc;
-using Olive.Web;
-using Domain;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using PeopleService;
+using System.Threading.Tasks;
 using vm = ViewModel;
 
-namespace ViewComponents
+namespace Olive.Hub
 {
     [EscapeGCop("Auto generated code.")]
-    #pragma warning disable
-    public partial class MainMenu : ViewComponent
-    {
-        public async Task<IViewComponentResult> InvokeAsync(vm.MainMenu info)
-        {
-            return View(await Bind<vm.MainMenu>(info));
-        }
-    }
-}
-
-namespace Controllers
-{
-    [EscapeGCop("Auto generated code.")]
-    #pragma warning disable
+#pragma warning disable
     public partial class MainMenuController : BaseController
     {
         [NonAction, OnBound]
@@ -46,20 +15,17 @@ namespace Controllers
         {
             info.ActiveItem = GetActiveItem(info);
         }
-        
+
         [NonAction]
-        public string GetActiveItem(vm.MainMenu info)
-        {
-            return null;
-        }
+        public string GetActiveItem(vm.MainMenu info) => null;
     }
 }
 
 namespace ViewModel
 {
     [EscapeGCop("Auto generated code.")]
-    #pragma warning disable
-    [BindingController(typeof(Controllers.MainMenuController))]
+#pragma warning disable
+    [BindingController(typeof(Olive.Hub.MainMenuController))]
     public partial class MainMenu : IViewModel
     {
         public string ActiveItem { get; set; }

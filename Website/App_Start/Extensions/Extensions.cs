@@ -11,7 +11,7 @@ namespace System
     {
         public static Task LogOn(this UserInfo @this)
         {
-            //if it's a smart phone we should persist logout time for a year
+            // if it's a smart phone we should persist logout time for a year
             var isSmartPhone = Context.Current.Request().IsSmartPhone();
             var timeOut = isSmartPhone ?
                 Config.Get("Authentication:Cookie:TimeoutMobile", defaultValue: 540).Minutes() :

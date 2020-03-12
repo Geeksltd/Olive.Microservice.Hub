@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "olive/*": [ "Website/wwwroot/lib/olive.mvc/typings/*" ],
+      "app/*": [ "Website/wwwroot/scripts/*" ]
+    },
+    "module": "amd",
+    "target": "es6",
+    "sourceMap": false,
+    "noImplicitUseStrict": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false
+  },
+  "compileOnSave": true,
+  "exclude": [
+    "Website/wwwroot/lib/olive.mvc/src",
+    "Website/wwwroot/lib/ansi-styles",
+    "Website/wwwroot/lib/find-up",
+    "bin",
+    "obj"
+  ]
+}

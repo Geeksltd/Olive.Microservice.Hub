@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Olive;
 using System;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ namespace ViewModel
     }
 }
 
-namespace Controllers
+namespace Olive.Hub
 {
     partial class SSOController
     {

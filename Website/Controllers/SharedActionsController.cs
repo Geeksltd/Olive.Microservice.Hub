@@ -1,4 +1,4 @@
-﻿namespace Controllers
+﻿namespace Olive.Hub
 {
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Http;
@@ -8,9 +8,6 @@
     using Olive.Mvc;
     using System;
     using System.ComponentModel;
-    using System.Linq;
-    using System.Net;
-    using System.Net.Sockets;
     using System.Threading.Tasks;
 
     public class SharedActionsController : BaseController
