@@ -27,7 +27,7 @@
     "jquery-ui": "components/jqueryui#^1.12.1",
     "jquery-validation": "jzaefferer/jquery-validation#1.17.0",
     "jquery-validation-bootstrap-tooltip": "Thrilleratplay/jquery-validation-bootstrap-tooltip#*",
-    "jquery-validation-unobtrusive": "aspnet/jquery-validation-unobtrusive#3.2.6",
+    "jquery-validation-unobtrusive": "aspnet/jquery-validation-unobtrusive#3.2.11",
     "js-cookie": "js-cookie/js-cookie#^2.2.0",
     "modernizr": "Modernizr/Modernizr#*",
     "moment": "moment/moment#>=2.8.0",

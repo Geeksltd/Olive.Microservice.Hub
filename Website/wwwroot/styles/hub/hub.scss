@@ -1,11 +1,12 @@
 ﻿/// <reference path="../imports/common.scss" />
+
 @import "../../lib/bootstrap/scss/functions";
 @import "../../lib/bootstrap/scss/variables";
 @import "../../lib/bootstrap/scss/mixins";
 @import "../../lib/bootstrap/scss/utilities";
 @import "../../lib/bootstrap/scss/nav";
 @import "../../lib/bootstrap/scss/list-group";
-
+@import "../theme.scss";
 @import "header";
 @import "footer";
 @import "side-bar";

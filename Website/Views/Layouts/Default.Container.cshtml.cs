@@ -28,7 +28,6 @@ namespace Olive.Hub
                                 <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
                                 <meta http-equiv=""refresh"" content=""{TimeOut}"">
                                 <title>{ViewData["Title"]}</title>
-                                <link rel='stylesheet' href=""{Microservice.Me.Url()}styles/theme.min.css?v=%APP_VERSION%"" type='text/css' />
                                 <link rel='stylesheet' href=""{Microservice.Me.Url()}styles/hub/hub.min.css?v=%APP_VERSION%"" type='text/css' />
                                 <link rel=""icon"" media=""all"" type=""image/x-icon"" href=""{Microservice.Me.Url()}img/favicon.png"" />
                                 <link rel=""shortcut icon"" href=""img/favicon.ico"">
@@ -66,7 +65,7 @@ namespace Olive.Hub
                                 <script type=""text/javascript"">
                                     window[""services""] = {Service.ToJson()?.Raw()}
                                 </script>
-                                <script src=""{Microservice.Me.Url()}lib/requirejs/require.js"" data-main=""{Microservice.Me.Url()}scripts/references.js?v=%APP_VERSION%""></script>
+                                <script src=""{Microservice.Me.Url()}lib/requirejs/require.js"" data-main=""{Microservice.Me.Url()}scripts/main-built.js?v=%APP_VERSION%""></script>
                             </head>
                             <body>
                                 <div class=""container-fluid p-0"">

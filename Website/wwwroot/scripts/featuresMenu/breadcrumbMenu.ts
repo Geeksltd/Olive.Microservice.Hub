@@ -1,6 +1,6 @@
 ﻿import AjaxRedirect from "olive/mvc/ajaxRedirect";
 
-export default class BreadcrumbMenu implements IService{
+export default class BreadcrumbMenu implements IService {
 
     constructor(private ajaxRedirect: AjaxRedirect) { }
 
@@ -10,7 +10,7 @@ export default class BreadcrumbMenu implements IService{
     }
 
     public bindItemListClick() {
-        
+
         //select feature items
         this.bindFeatureMenuItemsClicks($("div.item > a:not([href=''])"));
 
@@ -65,7 +65,7 @@ export default class BreadcrumbMenu implements IService{
 
         parent.remove();
 
-        if ($(".breadcrumb li").length == 1) {
+        if ($(".breadcrumb li").length === 1) {
             $(".feature-menu-item").attr("expand", "false")
         }
     }
@@ -74,7 +74,7 @@ export default class BreadcrumbMenu implements IService{
 
         let link = $($(".feature-menu-item .active").children("a")[0]);
 
-        if (link.length == 0) {
+        if (link.length === 0) {
             link = $($("[expand='true']")[0]).children("a");
         }
 
@@ -85,7 +85,7 @@ export default class BreadcrumbMenu implements IService{
 
         $(".breadcrumb").append(`<li class="breadcrumb-item"><a href="${window.location.origin}/under/" data-redirect="ajax">Home</a></li>`);
         //check to see if click event is from mid-page or left page
-        if (link.parents("li").length == 0) {
+        if (link.parents("li").length === 0) {
             link = $(`#${link.attr("id")} > a`);
         }
         else {

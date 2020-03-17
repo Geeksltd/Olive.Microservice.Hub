@@ -110,7 +110,7 @@ export default class FeaturesMenu {
             if (hasChildMenuItems) {
                 // Add the expand button;
                 expandIcon.click((e) => {
-                    let expanded = $el.attr("expand") == "true";
+                    let expanded = $el.attr("expand") === "true";
                     let $this = $(e.target);
 
                     if (expanded) {
@@ -128,7 +128,7 @@ export default class FeaturesMenu {
                 expandIcon.html("&nbsp;");
             }
 
-            if ($el.attr("expand") == "true")
+            if ($el.attr("expand") === "true")
                 expandIcon.removeClass().addClass("arrow-down");
 
             let emptyLink = $("> a[href='']", $el);
@@ -190,13 +190,13 @@ export default class FeaturesMenu {
         $("#iFrameHolder").hide().attr("style", "height: 0;");
 
         //check to see if click event is from mid-page or left page
-        if (link.closest(".feature-menu-item").length == 0) {
+        if (link.closest(".feature-menu-item").length === 0) {
             link = $(`#${link.attr("id")} > a`);
         }
 
         let wrapper = link.closest(".feature-menu-item");
 
-        if (wrapper.attr("expand") == "true") {
+        if (wrapper.attr("expand") === "true") {
             // Collapse the wrapper
             wrapper.attr("expand", "false");
         }
@@ -247,7 +247,7 @@ export default class FeaturesMenu {
 
         let elementId = $(element).attr("id");
 
-        if ($("body").data("currentMenu") == elementId && $(".features-sub-menu li").length > 0) {
+        if ($("body").data("currentMenu") === elementId && $(".features-sub-menu li").length > 0) {
             return;
         }
         else {
@@ -290,9 +290,9 @@ export default class FeaturesMenu {
         var objects = [];
         for (var i in obj) {
             if (!obj.hasOwnProperty(i)) continue;
-            if (typeof obj[i] == 'object') {
+            if (typeof obj[i] === 'object') {
                 objects = objects.concat(this.getObjects(obj[i], key, val));
-            } else if (i == key && obj[key] == val) {
+            } else if (i === key && obj[key] === val) {
                 objects.push(obj);
             }
         }

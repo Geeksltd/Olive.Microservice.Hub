@@ -10,3 +10,4 @@
 *.js
 *.map
 /Website/wwwroot/lib
+*.gz

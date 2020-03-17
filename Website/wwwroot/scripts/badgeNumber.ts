@@ -24,7 +24,7 @@ export default class BadgeNumber {
 
                     const className = "data-badge";
 
-                    if (this.input.attr("data-badge-optional") == 'true')
+                    if (this.input.attr("data-badge-optional") === 'true')
                         this.input.addClass("badge-optional");
 
                     this.input.attr(className, response);
@@ -35,14 +35,14 @@ export default class BadgeNumber {
 
                     if (child && child.attr(className)) {
 
-                        if (this.input.attr("data-badge-optional") == "true")
+                        if (this.input.attr("data-badge-optional") === "true")
                             return;
 
                         let total = parseInt(child.attr(className)) + parseInt(response);
                         child.attr(className, total);
                     }
                     else {
-                        if (child.length > 0 && this.input.attr("data-badge-optional") == "false")
+                        if (child.length > 0 && this.input.attr("data-badge-optional") === "false")
                             child.attr(className, response);
                     }
                 }

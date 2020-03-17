@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/styles/hub/hub.css",
+    "inputFile": "wwwroot/styles/hub/hub.scss"
+  },
+  {
+    "outputFile": "wwwroot/styles/theme.css",
+    "inputFile": "wwwroot/styles/theme.scss"
+  },
+  {
+    "outputFile": "wwwroot/Styles/webForms.css",
+    "inputFile": "wwwroot/Styles/webForms.scss"
+  }
+]

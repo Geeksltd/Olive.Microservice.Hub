@@ -10,7 +10,7 @@
     <Description>A plugin for Olive Framework</Description>
     <Copyright>Copyright ©2020 Geeks Ltd - All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/Geeksltd/Olive</PackageProjectUrl>
-    <Version>1.0.35</Version>
+    <Version>1.0.36</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -65,11 +65,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Website\wwwroot\**\*" Exclude="Website\wwwroot\lib\**\*" />
+    <EmbeddedResource Include="Website\wwwroot\**\*" Exclude="Website\wwwroot\lib\**\*; Website\wwwroot\styles\**\*.scss; Website\wwwroot\styles\**\*.exe; Website\wwwroot\styles\**\*.bat; Website\wwwroot\**\*.ts; Website\wwwroot\**\*.map; Website\wwwroot\**\*.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Website\wwwroot\scripts\bundle-built.js" />
+    <EmbeddedResource Include="Website\wwwroot\scripts\references.js" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /y $(TargetDir)Olive.Microservice.Hub.* C:\Users\MRP\.nuget\packages\olive.microservice.hub\1.0.32\lib\netcoreapp2.1" />
+    <Exec Command="copy /y $(TargetDir)Olive.Microservice.Hub.* C:\Users\MRP\.nuget\packages\olive.microservice.hub\1.0.36\lib\netcoreapp2.1" />
   </Target>
 
 </Project>
