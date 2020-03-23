@@ -20,6 +20,32 @@ import Hub from './hub';
 import HubUrl from './overrides/hubUrl';
 import HubModal from './hubModal';
 
+//fake loading module
+import x1 from 'jquery-ui/ui/focusable';
+import x2 from 'jquery-validate';
+import x3 from 'jquery-validate-unobtrusive';
+import x4 from 'alertify';
+import x5 from 'smartmenus';
+import x6 from 'file-upload';
+import x7 from 'jquery-typeahead';
+import x8 from 'js-cookie';
+import x9 from 'handlebars';
+import x10 from 'hammerjs';
+import x11 from 'chosen';
+import x12 from 'popper';
+import x13 from 'bootstrap';
+import x14 from 'moment-locale';
+import x15 from 'datepicker';
+import x16 from 'spinedit';
+import x17 from 'password-strength';
+import x18 from 'slider';
+import x19 from 'file-style';
+import x20 from 'validation-style';
+import x21 from 'bootstrapToggle';
+import x22 from 'bootstrap-select';
+import x23 from 'jquery-ui/ui/widget';
+import * as moment from 'moment'
+
 export default class AppPage extends OlivePage {
 
     // Here you can override any of the base standard functions.
@@ -27,7 +53,6 @@ export default class AppPage extends OlivePage {
 
     constructor() {
         super();
-
         this.getService<Hub>(HubServices.Hub).initialize();
         BadgeNumber.enableBadgeNumber($("a[data-badgeurl]"));
 
@@ -102,6 +127,10 @@ export default class AppPage extends OlivePage {
 
         // This function is called upon every Ajax update as well as the initial page load.
         // Any custom initiation goes here.
+    }
+
+    loadFakeModules() {
+        console.log(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, moment, x14, x15, x16, x17, x18, x19, x20, x21, x22, x23);
     }
 }
 

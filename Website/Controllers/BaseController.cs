@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Olive.Mvc;
 using System;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Olive.Hub
 {
@@ -41,7 +42,6 @@ namespace Olive.Hub
         {
             return Content(await model.Render<TView>(ViewData, second), "text/html");
         }
-
     }
 }
 

@@ -1,4 +1,4 @@
-﻿@mixin login-box($background-image) {
+﻿@mixin login-box() {
     padding: 50px 50px 10px;
     max-width: 500px;
     margin: 100px auto auto auto;
@@ -23,7 +23,7 @@
         width: 100%;
 
         .google-login-wrapper {
-            @include login-box("/img/login.png");
+            @include login-box();
             padding-bottom: 50px;
 
             h2 {
@@ -43,7 +43,7 @@
     }
 
     .manual-login {
-        @include login-box("/img/developer.png");
+        @include login-box();
 
         .group-control {
             max-width: 100%;

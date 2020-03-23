@@ -15,6 +15,8 @@ namespace Olive.Hub
 
         public override async Task<string> Render()
         {
+            var appVersion = Config.Get("App.Resource.Version", "1");
+
             return $@"
                     <!DOCTYPE html>
                     <html>
@@ -23,10 +25,10 @@ namespace Olive.Hub
                     <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
                     <meta http-equiv=""refresh"" content=""{TimeOut}"">
                         <title>{ViewData["Title"]}</title>
-                        <link rel='stylesheet' href=""styles/theme.min.css?v=%APP_VERSION%"" type='text/css' />
+                        <link rel='stylesheet' href=""styles/theme.min.css?v={appVersion}"" type='text/css' />
                     </head>
                     <body>
-                        <script src=""lib/requirejs/require.js"" data-main=""/scripts/references.js?v=%APP_VERSION%""></script>
+                        <script src=""lib/requirejs/require.js"" data-main=""/scripts/references.js?v={appVersion}""></script>
                         <service of=""hub"">
                             {RenderBodyAjax()}
                         </service>

@@ -20,9 +20,9 @@ namespace Olive.Hub
                             <form data-module=""LoginForm"" role=""form"" method=""post"" action=""{Url.Current()}"" data-validation-style=""tooltip"" class=""social-media-login"">        
                                 {Html.StartupActionsJson()}
                                 <div class='google-login-wrapper'>            
-                                    <img name=""Logo"" src=""/img/Geeks.png"" alt=""Logo"" /> 
+                                    <img name=""Logo"" src=""{HubConfig.HubFile("/hub/image").Attributes["geeksLogo"]?.InnerText}"" alt=""Logo"" /> 
                                     <br /> 
-                                    <img name=""FitSuite"" src=""/img/fitsuite.png"" alt=""FitSuite"" /> 
+                                    <img name=""FitSuite"" src=""{HubConfig.HubFile("/hub/image").Attributes["login"]?.InnerText}"" alt=""FitSuite"" /> 
                                     <br /> <br />
                                 <button type=""submit"" name=""LoginByGoogle"" class=""btn-social btn-google btn btn-primary btn btn-primary"" formaction='{Url.ActionWithQuery("LoginForm/LoginByGoogle")}' default-button=""true"" formmethod='post'><i class=""fas fa-user-lock""></i> Login by Google </button>
                                 </div> <div class=""form-body"">

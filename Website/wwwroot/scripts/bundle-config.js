@@ -1,13 +1,21 @@
 ({
     baseUrl: "./",
+    //mainConfigFile: "references.js",
     paths: {
         // JQuery:
         "jquery": "../lib/jquery/dist/jquery.min",
-        "jquery-ui/ui/widget": "../lib/jquery-ui/ui/widget",
-        "jquery-ui/ui/version": "../lib/jquery-ui/ui/version",
+        //"jquery-ui/ui/widget": "../lib/jquery-ui/ui/widget",
+        //"jquery-ui/ui/version": "../lib/jquery-ui/ui/version",
         "jquery-ui/ui/focusable": "../lib/jquery-ui/ui/focusable",
         "jquery-validate": "../lib/jquery-validation/dist/jquery.validate",
         "jquery-validate-unobtrusive": "../lib/jquery-validation-unobtrusive/src/jquery.validate.unobtrusive",
+        "mouse": "../lib/jquery-ui/ui/widgets/mouse",
+        "../data": "../lib/jquery-ui/ui/data",
+        "../ie": "../lib/jquery-ui/ui/ie",
+        "../scroll-parent": "../lib/jquery-ui/ui/scroll-parent",
+        "../version": "../lib/jquery-ui/ui/version",
+        "../widget": "../lib/jquery-ui/ui/widget",
+        "jquery-sortable": "../lib/jquery-ui/ui/widgets/sortable",
 
         // Jquery plugins:
         "alertify": "../lib/alertifyjs/dist/js/alertify",
@@ -20,6 +28,7 @@
         "hammerjs": "../lib/hammer.js/hammer.min",
         "jquery-mentions": "../lib/jquery-mentions-input/jquery.mentionsInput",
         "chosen": "../lib/chosen-js/chosen.jquery.min",
+
 
         // Bootstrap
         "popper": "../lib/popper.js/dist/umd/popper.min",
@@ -42,18 +51,22 @@
             "popper.js": "popper",
             '../moment': 'moment',
             "app": "../scripts",
-            "jquery-sortable": "../lib/jquery-ui/ui/widgets/sortable"
+            "jquery-ui/ui/version": "../lib/jquery-ui/ui/version",
+            "jquery-ui/ui/widget": "../lib/jquery-ui/ui/widget",
+            //"jquery-sortable": "../lib/jquery-ui/ui/widgets/sortable"
         }
     },
     shim: {
         "bootstrap": ["jquery", "popper"],
         "bootstrap-select": ['jquery', 'bootstrap'],
         "bootstrapToggle": ["jquery"],
+        //"jquery-sortable": ["jquery-ui/ui/version"],
+        //"jquery-ui/ui/focusable": ['../version'],
         "jquery-validate": ['jquery'],
         "validation-style": ['jquery', "jquery-validate", "bootstrap"],
         "combodate": ['jquery'],
         "jquery-typeahead": ['jquery'],
-        "file-upload": ['jquery', 'jquery-ui/ui/widget'],
+        "file-upload": ['jquery', '../widget'],
         "file-style": ["file-upload"],
         "smartmenus": ['jquery'],
         "chosen": ['jquery'],
@@ -78,7 +91,7 @@
     },
     optimize: "none",
     //generateSourceMaps: false,
-    //preserveLicenseComments: false,
-    name: "references",
+    //preserveLicenseComments: false,    
+    name: "appPage.js",
     out: "bundle-built.js"
 })

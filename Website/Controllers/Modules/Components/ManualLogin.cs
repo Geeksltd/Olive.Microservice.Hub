@@ -34,7 +34,7 @@ namespace Olive.Hub
             if (Request.IsGet())
             {
                 // Set default roles
-                info.RoleNames = @"Employee,Dev,JuniorDev,SeniorDev,LeadDev,HeadDev,QA,JuniorQA,SeniorQA,LeadQA,HeadQA,BA,JuniorBA,SeniorBA,LeadBA,HeadBA,PM,JuniorPM,SeniorPM,LeadPM,HeadPM,AM,JuniorAM,SeniorAM,LeadAM,HeadAM,Director,JuniorDirector,SeniorDirector,LeadDirector,HeadDirector,Designer,JuniorDesigner,SeniorDesigner,LeadDesigner,HeadDesigner,IT,JuniorIT,SeniorIT,LeadIT,HeadIT,Reception,JuniorReception,SeniorReception,LeadReception,HeadReception,PA,JuniorPA,SeniorPA,LeadPA,HeadPA,Sales,JuniorSales,SeniorSales,LeadSales,HeadSales,DevOps,JuniorDevOps,SeniorDevOps,LeadDevOps,HeadDevOps";
+                info.RoleNames = HubConfig.HubFile("/hub/auth/testUser").Attributes["roles"].InnerText;
             }
         }
 
@@ -47,9 +47,9 @@ namespace Olive.Hub
 
             if (Request.IsGet()) await info.Item.CopyDataTo(info);
 
-            info.DisplayName = "Jack Smith";
+            info.DisplayName = HubConfig.HubFile("/hub/auth/testUser").Attributes["displayName"].InnerText;
 
-            info.Email = "jack.smith@geeks.ltd";
+            info.Email = HubConfig.HubFile("/hub/auth/testUser").Attributes["email"].InnerText;
 
             info.DisplayName_Visible = info.IsVisible;
             info.Email_Visible = info.IsVisible;
@@ -58,7 +58,8 @@ namespace Olive.Hub
             TryValidateModel(info);
 
             // Set user ID for manual login
-            info.Item.ID = "5C832BDB-145D-4DD6-8A28-379CC504B5EA".To<Guid>();
+            if (!HubConfig.HubFile("/hub/auth/testUser").Attributes["id"].InnerText.IsEmpty())
+                info.Item.ID = HubConfig.HubFile("/hub/auth/testUser").Attributes["id"].InnerText.To<Guid>();
         }
     }
 }

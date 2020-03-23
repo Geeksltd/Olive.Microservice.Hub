@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Domain
@@ -19,7 +18,8 @@ namespace Domain
 
         static void LoadServices()
         {
-            Run("LoadServices", () => Service.All == null, () =>
+            // LoadServices
+            Run(() => Service.All == null, () =>
                {
                    var environment = Context.Current.Environment().EnvironmentName.ToLower();
 
@@ -35,72 +35,57 @@ namespace Domain
                });
         }
 
-        static void Run(string actionName, Func<bool> condition, Action action)
+        static void Run(Func<bool> condition, Action action)
         {
-            if (condition() == false) return;
-
-            var start = LocalTime.Now;
-
             if (condition() == false) return;
 
             action();
-
-            Console.WriteLine($"########################### Finished running {actionName} in " + LocalTime.Now.Subtract(start).ToNaturalTime());
         }
 
-        static IEnumerable<XElement> ReadXml(System.IO.FileInfo file)
+        static IEnumerable<XElement> ReadXml(FileInfo file)
         {
-            var start = LocalTime.Now;
-            var result = file.ReadAllText().To<XDocument>().Root.Elements();
-            Console.WriteLine($"########################### Finished running ReadXml for {file.Name} in " + LocalTime.Now.Subtract(start).ToNaturalTime());
-            return result;
+            return file.ReadAllText().To<XDocument>().Root.Elements();
         }
 
-        static FileInfo GetFromRoot(string filename) => AppDomain.CurrentDomain.WebsiteRoot().GetFile(filename);
+        static FileInfo GetFromRoot(string filename) => AppDomain.CurrentDomain.WebsiteRoot().GetFile($"Config\\{filename}");
 
 
         static FeatureDefinition[] GetFeatureDefinitions()
         {
-            var start = LocalTime.Now;
-            var stepStart = LocalTime.Now;
-            void StartSet() => stepStart = LocalTime.Now;
             var root = new FeatureDefinition(null, new XElement("ROOT"));
-            Log.For(typeof(StructureDeserializer)).Info("finished FeatureDefinition in " + LocalTime.Now.Subtract(stepStart).ToNaturalTime());
-            StartSet();
+
             var files = new[] { "Features.xml", "Features.Widgets.xml" }.Select(f => GetFromRoot(f));
-            Log.For(typeof(StructureDeserializer)).Info("finished getting files in " + LocalTime.Now.Subtract(stepStart).ToNaturalTime());
-            StartSet();
-            var results = files
+
+            return files
                      .Select(x => ReadXml(x))
                      .SelectMany(x => x)
                      .Select(x => new FeatureDefinition(root, x))
                      .ToArray();
-            Log.For(typeof(StructureDeserializer)).Info("finished calculating the results in " + LocalTime.Now.Subtract(stepStart).ToNaturalTime());
-            Log.For(typeof(StructureDeserializer)).Info("finished GetFeatureDefinitions in " + LocalTime.Now.Subtract(start).ToNaturalTime());
-            return results;
         }
 
         static void LoadFeatures()
         {
-            Run("LoadFeatures", () => Feature.All == null, () =>
-               {
-                   Feature.All = GetFeatureDefinitions()
-                   .SelectMany(x => x.GetAllFeatures())
-                   .ExceptNull()
-                   .ToList();
+            // LoadFeatures
+            Run(() => Feature.All == null, () =>
+              {
+                  Feature.All = GetFeatureDefinitions()
+                  .SelectMany(x => x.GetAllFeatures())
+                  .ExceptNull()
+                  .ToList();
 
-                   foreach (var item in Feature.All)
-                       item.Children = Feature.All.Where(x => x.Parent == item);
+                  foreach (var item in Feature.All)
+                      item.Children = Feature.All.Where(x => x.Parent == item);
 
-               });
+              });
         }
 
         static void LoadBoards()
         {
-            Run("LoadBoards", () => Board.All == null, () =>
-                {
-                    Board.All = ReadXml(GetFromRoot("Boards.xml")).Select(x => new Board(x)).ToList();
-                });
+            // LoadBoards
+            Run(() => Board.All == null, () =>
+               {
+                   Board.All = ReadXml(GetFromRoot("Boards.xml")).Select(x => new Board(x)).ToList();
+               });
         }
     }
 }

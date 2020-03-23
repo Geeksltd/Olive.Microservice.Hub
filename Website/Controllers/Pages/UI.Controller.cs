@@ -14,7 +14,7 @@ namespace Olive.Hub
         [Route("")]
         public async Task<ActionResult> Index(vm.FeatureView info)
         {
-            ViewData["Title"] = "Geeks Access Hub";
+            ViewData["Title"] = HubConfig.HubFile("/hub/browser").Attributes["title"].InnerText;
 
             if (!User.Identity.IsAuthenticated)
             {

@@ -265,18 +265,11 @@ jquery-validation-unobtrusive@aspnet/jquery-validation-unobtrusive#3.2.11:
     jquery ">=1.8"
     jquery-validation ">=1.16"
 
-jquery-validation@>=1.16:
+jquery-validation@>=1.16, jquery-validation@jzaefferer/jquery-validation#1.19.1:
   version "1.19.1"
-  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.19.1.tgz#a85043467dc2b70d9fff05778646d150e747742f"
-  integrity sha512-QNnrZBqSltWUEJx+shOY5WtfrIb0gWmDjFfQP8rZKqMMSfpRSwEkSqhfHPvDfkObD8Hnv5KHSYI8yg73sVFdqA==
+  resolved "https://codeload.github.com/jzaefferer/jquery-validation/tar.gz/3cdad0bc8dc1e6fbd34c1e3225598f80cfd97a48"
 
-jquery-validation@jzaefferer/jquery-validation#1.17.0:
-  version "1.17.0"
-  resolved "https://codeload.github.com/jzaefferer/jquery-validation/tar.gz/fc9b12d3bfaa2d0c04605855b896edb2934c0772"
-  dependencies:
-    jquery "^1.7 || ^2.0 || ^3.1"
-
-jquery@>=1.6, jquery@>=1.7.0, jquery@>=1.7.2, jquery@>=1.8, "jquery@^1.7 || ^2.0 || ^3.1", jquery@latest:
+jquery@>=1.6, jquery@>=1.7.0, jquery@>=1.7.2, jquery@>=1.8, jquery@latest:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
@@ -432,18 +425,20 @@ requirejs@jrburke/requirejs-bower#*:
   version "0.0.0"
   resolved "https://codeload.github.com/jrburke/requirejs-bower/tar.gz/3596b04fa67953d2fb06456ecb92cf833b462b82"
 
-seiyria-bootstrap-slider@seiyria/bootstrap-slider#7.1.1:
-  version "7.1.1"
-  resolved "https://codeload.github.com/seiyria/bootstrap-slider/tar.gz/56b5299ceb23440f07e0d2ca9a49ab04da20ee99"
+seiyria-bootstrap-slider@seiyria/bootstrap-slider#10.6.2:
+  version "10.6.2"
+  resolved "https://codeload.github.com/seiyria/bootstrap-slider/tar.gz/16ebedebe70584c561bc0d1c5af7e91b93e81ec4"
 
 set-blocking@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha1-BF+XgtARrppoA93TgrJDkrPYkPc=
 
-smartmenus@vadikom/smartmenus#1.0.0-beta1:
-  version "1.0.0-beta1"
-  resolved "https://codeload.github.com/vadikom/smartmenus/tar.gz/cb2f457a78134716e76a1b970962e77ebedcf22b"
+smartmenus@vadikom/smartmenus#1.1.0:
+  version "1.1.0"
+  resolved "https://codeload.github.com/vadikom/smartmenus/tar.gz/9a73dd16049c8ac0b000d0c7b23b47defed61015"
+  dependencies:
+    jquery ">=1.7.0"
 
 sprintf-js@~1.0.2:
   version "1.0.3"
