@@ -63,10 +63,10 @@ declare module 'bootstrap' {
     export default noTypesYet;
 }
 
-declare module 'moment' {
-    const noTypesYet: any;
-    export default noTypesYet;
-}
+//declare module 'moment' {
+//    const noTypesYet: any;
+//    export default noTypesYet;
+//}
 
 declare module 'moment-locale' {
     const noTypesYet: any;

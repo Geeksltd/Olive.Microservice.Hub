@@ -1,0 +1,7 @@
+﻿
+
+requirejs(["app/hub", "app/appPage",], function (a1, a2) { });
+
+window.loadModule = function (path, onLoaded) {
+    requirejs([path], function (m) { if (onLoaded) onLoaded(m) });
+};

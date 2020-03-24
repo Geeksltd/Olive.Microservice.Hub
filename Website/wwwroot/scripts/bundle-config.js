@@ -92,6 +92,6 @@
     optimize: "none",
     //generateSourceMaps: false,
     //preserveLicenseComments: false,    
-    name: "appPage.js",
+    name: "appPage",
     out: "bundle-built.js"
 })
