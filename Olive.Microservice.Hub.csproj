@@ -69,6 +69,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Website\wwwroot\scripts\build-bundle.bat" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Website\wwwroot\scripts\append-script.txt" />
     <None Remove="Website\wwwroot\scripts\bundle-built.min.js" />
     <None Remove="Website\wwwroot\styles\hub\hub.min.css" />
