@@ -10,7 +10,7 @@
     <Description>A plugin for Olive Framework</Description>
     <Copyright>Copyright ©2020 Geeks Ltd - All rights reserved.</Copyright>
     <PackageProjectUrl>https://github.com/Geeksltd/Olive</PackageProjectUrl>
-    <Version>1.0.36</Version>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -86,10 +86,6 @@
     <EmbeddedResource Include="Website\wwwroot\styles\webForms.css" />
     <EmbeddedResource Include="Website\wwwroot\styles\webForms.min.css" />
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /y $(TargetDir)Olive.Microservice.Hub.* C:\Users\MRP\.nuget\packages\olive.microservice.hub\1.0.36\lib\netcoreapp2.1" />
-  </Target>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="$(ProjectDir)Website\wwwroot\scripts\build-bundle.bat" />
