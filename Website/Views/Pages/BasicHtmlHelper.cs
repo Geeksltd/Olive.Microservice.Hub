@@ -10,17 +10,34 @@ using System.Threading.Tasks;
 
 namespace Olive.Hub
 {
+    /// <summary>
+    /// Custom implementation of IHtmlHlper
+    /// </summary>
     public class BasicHtmlHelper : IHtmlHelper
     {
+        //private readonly IHtmlGenerator _htmlGenerator;
+
+        //public BasicHtmlHelper(IHtmlGenerator htmlGenerator)
+        //{
+        //    if (htmlGenerator == null)
+        //    {
+        //        throw new ArgumentNullException(nameof(htmlGenerator));
+        //    }
+
+        //    _htmlGenerator = htmlGenerator;
+        //}
+
+        public dynamic ViewBag => throw new NotImplementedException();
+
+        public ViewContext ViewContext { get; } = new ViewContext { HttpContext = Context.Current.Http() };
+
+        #region Not Implemented yet
+
         public Html5DateRenderingMode Html5DateRenderingMode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public string IdAttributeDotReplacement => throw new NotImplementedException();
 
         public IModelMetadataProvider MetadataProvider => throw new NotImplementedException();
-
-        public dynamic ViewBag => throw new NotImplementedException();
-
-        public ViewContext ViewContext { get; } = new ViewContext { HttpContext = Context.Current.Http() };
 
         public ViewDataDictionary ViewData
         {
@@ -125,11 +142,6 @@ namespace Olive.Hub
             throw new NotImplementedException();
         }
 
-        public IHtmlContent Hidden(string expression, object value, object htmlAttributes)
-        {
-            throw new NotImplementedException();
-        }
-
         public string Id(string expression)
         {
             throw new NotImplementedException();
@@ -209,5 +221,40 @@ namespace Olive.Hub
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+
+        public IHtmlContent Hidden(string expression, object value, object htmlAttributes)
+        {
+            throw new NotImplementedException();
+            //return GenerateHidden(
+            //    modelExplorer: null,
+            //    expression: expression,
+            //    value: value,
+            //    useViewData: (value == null),
+            //    htmlAttributes: htmlAttributes);
+        }
+
+        //protected virtual IHtmlContent GenerateHidden(
+        //    ModelExplorer modelExplorer,
+        //    string expression,
+        //    object value,
+        //    bool useViewData,
+        //    object htmlAttributes)
+        //{
+        //    var tagBuilder = _htmlGenerator.GenerateHidden(
+        //        ViewContext,
+        //        modelExplorer,
+        //        expression,
+        //        value,
+        //        useViewData,
+        //        htmlAttributes);
+        //    if (tagBuilder == null)
+        //    {
+        //        return HtmlString.Empty;
+        //    }
+
+        //    return tagBuilder;
+        //}
     }
 }

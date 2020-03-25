@@ -3,11 +3,11 @@ using Olive.Mvc;
 
 namespace Olive.Hub
 {
-    public class FeatureView : BasePage<ViewModel.FeatureView>
+    public class FeatureView : DefaultContainerLayout<ViewModel.FeatureView>
     {
         public FeatureView(ViewModel.FeatureView vm) : base(vm) { }
 
-        public override Task<string> Render()
+        protected override Task<string> RenderBodyAjax()
         {
             var result = $@"                    
                             <form data-module=""FeatureView"" method=""post"" action=""{Url.Current()}"" class=""feature-frame-view"">                               

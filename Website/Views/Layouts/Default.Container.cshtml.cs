@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Web;
 using Domain;
 using Olive.Mvc;
 
@@ -59,6 +60,8 @@ namespace Olive.Hub
                                                     <main class=""hub-service"">
                                                         <input type=""hidden"" id=""page_meta_title"" value=""{ViewData["Title"]}"" />
                                                     {await RenderBodyAjax()}
+                                                    {Html.RegisterDynamicScriptFiles()}
+                                                    {GenerateHiddenAction()}
                                                     </main>
                                                     <div class=""feature-frame-view view-body"" id=""iFrameHolder"">
                                                         <iframe class='view-frame embed-responsive-item w-100 h-100' name='view-frame'></iframe>
@@ -74,6 +77,13 @@ namespace Olive.Hub
                             </html>";
 
             return result;
+        }
+
+        protected string GenerateHiddenAction()
+        {
+            var startupActions = HttpUtility.HtmlEncode(Html.GetActionsJson().ToString().Unless("[]"));
+
+            return startupActions.HasValue() ? $"<input id=\"Startup_Actions\" name=\"Startup.Actions\" type=\"hidden\" value=\"{ startupActions}\" />" : string.Empty;
         }
 
         private async Task<string> GenerateTopmenuWrapper()

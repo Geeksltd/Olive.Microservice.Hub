@@ -1,8 +1,4 @@
 ﻿using Olive.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Olive.Hub
@@ -21,6 +17,8 @@ namespace Olive.Hub
                 var result = $@"<main class=""hub-service"">
                             <input type=""hidden"" id=""page_meta_title"" value=""{ViewData["Title"]}"" />
                             {await RenderBodyAjax()}
+                            {Html.RegisterDynamicScriptFiles()}
+                            {GenerateHiddenAction()}
                             </main>";
 
                 return result;

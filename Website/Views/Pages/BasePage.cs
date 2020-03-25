@@ -18,6 +18,7 @@ namespace Olive.Hub
         protected IUrlHelper Url => Context.GetUrlHelper();
 
         protected IHtmlHelper Html = new BasicHtmlHelper();
+
         public new dynamic ViewBag => Context.ViewBag();
 
         public new HttpContext Context => Olive.Context.Current.Http();
