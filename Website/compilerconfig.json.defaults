@@ -1,5 +1,5 @@
 {
-  "compilers": {    
+  "compilers": {
     "sass": {
       "includePath": "",
       "indentType": "space",
@@ -9,7 +9,7 @@
       "relativeUrls": true,
       "sourceMapRoot": "",
       "sourceMap": false
-    }    
+    }
   },
   "minifiers": {
     "css": {

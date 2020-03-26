@@ -46,7 +46,7 @@ namespace Olive.Hub
                                 <script type=""text/javascript"">
                                     window[""services""] = {Service.ToJson()?.Raw()}
                                 </script>
-                                <script src=""{Microservice.Me.Url()}lib/requirejs/require.js"" data-main=""{Microservice.Me.Url()}scripts/bundle-built.min.js?v={appVersion}""></script>
+                                <script src=""{Microservice.Me.Url()}lib/requirejs/require.js"" data-main=""{Microservice.Me.Url()}scripts/references.js?v={appVersion}""></script>
                             </head>
                             <body>
                                 <div class=""container-fluid p-0"">
