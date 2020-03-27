@@ -3,4 +3,4 @@
 ECHO.
 ECHO ::::::::: Rebuilding sass files :::::::::::::::::::::::::::::::::
 ECHO.
-call Website\wwwroot\styles\build\SassCompiler.exe ..\..\..\Compilerconfig.json 
+call SassCompiler.exe ..\..\..\Compilerconfig.json 

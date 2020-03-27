@@ -30973,10 +30973,8 @@ define('app/appPage',["require", "exports", "olive/olivePage", "app/featuresMenu
 
 ﻿
 
-requirejs(["app/hub", "app/appPage",], function (a1, a2) { });
+requirejs(["app/hub", "app/appPage"], function () {});
 
 window.loadModule = function (path, onLoaded) {
     requirejs([path], function (m) { if (onLoaded) onLoaded(m) });
 };
-
-window["BaseThemeUrl"] = 'http://localhost:9011'; // Used in all microservices => should be absolute
