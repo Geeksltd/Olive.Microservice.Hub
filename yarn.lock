@@ -366,9 +366,9 @@ muuri@haltu/muuri#^0.5.4:
   dependencies:
     hammerjs "^2.0.0"
 
-olive.mvc@Geeksltd/Olive.MvcJs#2.0.34:
+olive.mvc@Geeksltd/Olive.MvcJs#2.0.42:
   version "0.0.0"
-  resolved "https://codeload.github.com/Geeksltd/Olive.MvcJs/tar.gz/1deccdd09ab80bc74c2f98a846330b655efe2cef"
+  resolved "https://codeload.github.com/Geeksltd/Olive.MvcJs/tar.gz/3b5e6a037cb3f18a731cba332d215b2798405c2d"
 
 p-limit@^2.2.0:
   version "2.2.2"

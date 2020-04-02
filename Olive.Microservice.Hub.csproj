@@ -30,13 +30,11 @@
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
-    <PackageReference Include="GCop.All.Geeks" Version="2.6.1" />
     <PackageReference Include="Hangfire" Version="1.7.9" />
     <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.ViewCompilation" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
-    <PackageReference Include="GCop.All.Geeks" Version="2.6.1" />
     <PackageReference Include="Olive" Version="2.1.180" />
     <PackageReference Include="Olive.Audit" Version="2.1.103" />
     <PackageReference Include="Olive.Entities.Data.SqlServer" Version="2.1.107" />
@@ -89,6 +87,10 @@
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="$(ProjectDir)Website\wwwroot\scripts\build-bundle.bat" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /y $(TargetDir)Olive.Microservice.Hub.* C:\Users\MRP\.nuget\packages\olive.microservice.hub\1.0.1\lib\netcoreapp2.1" />
   </Target>
 
 </Project>

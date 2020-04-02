@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Web;
 using Domain;
 using Olive.Mvc;
@@ -143,9 +144,9 @@ namespace Olive.Hub
         {
             if (LeftMenu.HasValue())
             {
-                var result = $@"<div class=""task-bar d-none d-lg-flex p-0"">
-                                    <button type=""button"" id=""taskBarCollapse"" class=""navbar-btn d-none d-lg-block"">
-                                        <i class=""fa fa-chevron-right"" aria-hidden=""true""></i>
+                var result = $@"<div class=""task-bar d-none d-lg-flex p-0 {CollapseMenu()}"">
+                                    <button type=""button"" id=""taskBarCollapse"" class=""navbar-btn d-none d-lg-block {CollapseButton()}"">
+                                        <i class=""fa {CollapseIcon()}"" aria-hidden=""true""></i>
                                     </button>
                                     <iframe id=""taskiFram"" style=""height: 100%;"" src=""{Microservice.Of("Tasks").Url()}widget-my-priority/{User.GetEmail().Split("@")[0].RemoveFrom(".")}"" sandbox=""allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation""></iframe>
                                 </div>";
@@ -155,6 +156,20 @@ namespace Olive.Hub
 
             return string.Empty;
         }
+
+        private string CollapseMenu()
+        {
+            var cookie = Context.Request.Cookies[".task-bar"];
+
+            if (cookie.OrEmpty().ToLower() == "collapsed")
+                return "collapsed";
+
+            return string.Empty;
+        }
+
+        private string CollapseIcon() => CollapseMenu() == "collapsed" ? "fa-chevron-left" : "fa-chevron-right";
+
+        private string CollapseButton() => CollapseMenu() == "collapsed" ? "collapse" : string.Empty;
 
         protected abstract Task<string> RenderBodyAjax();
     }

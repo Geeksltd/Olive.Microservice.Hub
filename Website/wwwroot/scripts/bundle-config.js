@@ -43,8 +43,8 @@
             "popper.js": "popper",
             '../moment': 'moment',
             "app": "../scripts",
+            "jquery-sortable": "jquery-ui/ui/widgets/sortable"
             //"jquery-ui/ui/widget": "jquery-ui/ui/widget",
-            //"jquery-sortable": "jquery-ui/ui/widgets/sortable"
             //"jquery-ui/ui/version": "jquery-ui/ui/version",
             //"jquery-ui/ui/widget": "jquery-ui/ui/widget",
             //"../ie": "jquery-ui/ui/ie",

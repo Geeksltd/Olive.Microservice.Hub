@@ -22,9 +22,13 @@ export default class ExpandCollapse {
         const leftMenu = Cookies.get(menuSelector);
 
         if (leftMenu && leftMenu === "collapsed") {
-            $(menuSelector).addClass("collapsed");
-            this.changeIcon(this.input.select().children("i"));
-            this.input.addClass("collapse");
+
+            if (!$(menuSelector).hasClass("collapsed")) {
+                $(menuSelector).addClass("collapsed");
+                this.changeIcon(this.input.select().children("i"));
+                this.input.addClass("collapse");
+            }
+
         }
         else {
             this.input.removeClass("collapse");
