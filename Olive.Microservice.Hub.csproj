@@ -89,8 +89,4 @@
     <Exec Command="$(ProjectDir)Website\wwwroot\scripts\build-bundle.bat" />
   </Target>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy /y $(TargetDir)Olive.Microservice.Hub.* C:\Users\MRP\.nuget\packages\olive.microservice.hub\1.0.1\lib\netcoreapp2.1" />
-  </Target>
-
 </Project>
