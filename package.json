@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "license": "GPL-3.0",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.0",
+    "@fortawesome/fontawesome-free": "5.13.0",
     "alertify": "fabien-d/alertify.js-shim#~0.3.10",
     "alertify-bootstrap-3": "dbtek/alertify-bootstrap-3#~1.1.1",
     "alertifyjs": "alertifyjs/alertify.js#~0.3.18",
@@ -20,7 +20,7 @@
     "eonasdan-bootstrap-datetimepicker": "Eonasdan/bootstrap-datetimepicker#~4.7.14",
     "hammer.js": "hammerjs/hammer.js#^2.0.8",
     "hammerjs": "EightMedia/hammer.js#^2.0.0",
-    "handlebars": "components/handlebars.js#^4.0.11",
+    "handlebars": "components/handlebars.js#4.7.3",
     "jquery": "jquery/jquery-dist#3.2.1",
     "jquery-file-upload": "blueimp/jQuery-File-Upload#*",
     "jquery-typeahead": "running-coder/jquery-typeahead#2.10.4",
@@ -32,7 +32,7 @@
     "modernizr": "Modernizr/Modernizr#*",
     "moment": "moment/moment#>=2.8.0",
     "muuri": "haltu/muuri#^0.5.4",
-    "olive.mvc": "Geeksltd/Olive.MvcJs#2.0.42",
+    "olive.mvc": "Geeksltd/Olive.MvcJs#2.0.44",
     "popper.js": "^1.14.4",
     "pwstrength-bootstrap": "ablanco/jquery.pwstrength.bootstrap#~1.2.7",
     "requirejs": "jrburke/requirejs-bower#*",
@@ -41,10 +41,11 @@
     "web-animations-js": "web-animations/web-animations-js#^2.0.9",
     "which-pm-runs": "^1.0.0",
     "zxcvbn": "dropbox/zxcvbn#^4.2.0",
-    "bootstrap-select": "1.13.3",
+    "bootstrap-select": "1.13.15",
     "jquery-mentions-input": "^1.6.0",
-    "chosen-js" : "1.8.7",
-    "flickity": "metafizzy/flickity#2.2.1"
+    "chosen-js": "1.8.7",
+    "flickity": "metafizzy/flickity#2.2.1",
+    "underscore": "1.8.3"
   },
   "engines": {
     "yarn": ">= 1.0.0"

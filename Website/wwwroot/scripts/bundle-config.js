@@ -11,6 +11,7 @@
         "jquery-validate-unobtrusive": "jquery-validation-unobtrusive/src/jquery.validate.unobtrusive",
 
         // Jquery plugins:
+        "underscore": "underscore/underscore",
         "alertify": "alertifyjs/dist/js/alertify",
         "smartmenus": "smartmenus/dist/jquery.smartmenus.min",
         "file-upload": "jquery-file-upload/js/jquery.fileupload",
@@ -21,6 +22,8 @@
         "hammerjs": "hammer.js/hammer.min",
         "jquery-mentions": "jquery-mentions-input/jquery.mentionsInput",
         "chosen": "chosen-js/chosen.jquery.min",
+        "jquery-elastic": "jquery-mentions-input/lib/jquery.elastic",
+        "jquery-events-input": "jquery-mentions-input/lib/jquery.events.input",
 
         // Bootstrap
         "popper": "popper.js/dist/umd/popper.min",
@@ -56,6 +59,9 @@
         }
     },
     shim: {
+        "underscore": {
+            exports: '_'
+        },
         "jquery-ui-all": ["jquery"],
         "bootstrap": ["jquery", "popper"],
         "bootstrap-select": ['jquery', 'bootstrap'],
@@ -74,8 +80,7 @@
         "password-strength": ['jquery'],
         "moment-locale": ['moment'],
         "olive/extensions/jQueryExtensions": {
-            deps: ['jquery', "jquery-validate-unobtrusive"],
-            exports: '_'
+            deps: ['jquery', "jquery-validate-unobtrusive"]
         },
         "olive/olivePage": ["alertify", "olive/extensions/jQueryExtensions", "olive/extensions/systemExtensions", "combodate"],
 
@@ -85,7 +90,9 @@
         "app/featuresMenu/featuresMenu": ["app/model/service"],
         "app/featuresMenu/breadcrumbMenu": ["app/featuresMenu/featuresMenu"],
         "app/hub": ["app/featuresMenu/breadcrumbMenu"],
-        "jquery-mentions": ['jquery', "underscore/underscore-min", "jquery-mentions-input/lib/jquery.elastic", "jquery-mentions-input/lib/jquery.events.input"]
+        "jquery-elastic": ["jquery"],
+        "jquery-events-input": ["jquery"],
+        "jquery-mentions": ['jquery', "underscore", "jquery-elastic", "jquery-events-input"]
     },
     optimize: "none",
     //generateSourceMaps: false,
