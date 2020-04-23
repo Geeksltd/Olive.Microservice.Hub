@@ -15,7 +15,7 @@ namespace Olive.Hub
                             <div data-module=""GlobalSearch"" class=""no-print global-search"">
                                {Html.StartupActionsJson()}
                                <input type=""text"" name=""searcher""
-                               placeholder=""Search...""
+                               placeholder=""Search..."" autocomplete=""off""
                                class=""form-control global-search""
                                data-search-source=""{Model.GetSearchSources()}"" />
                             </div>";

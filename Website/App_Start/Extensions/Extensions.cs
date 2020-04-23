@@ -9,13 +9,12 @@ namespace System
 {
     public static class Extensions
     {
+        static int Timeout => Config.Get<int>("Authentication:Cookie:Timeout");
+        static int MobileTimeout => Config.Get<int>("Authentication:Cookie:TimeoutMobile");
+
         public static Task LogOn(this UserInfo @this)
         {
-            // if it's a smart phone we should persist logout time for a year
-            var isSmartPhone = Context.Current.Request().IsSmartPhone();
-            var timeOut = isSmartPhone ?
-                Config.Get("Authentication:Cookie:TimeoutMobile", defaultValue: 540).Minutes() :
-                Config.Get("Authentication:Cookie:Timeout", defaultValue: 540).Minutes();
+            var mobile = Context.Current.Request().IsSmartPhone();
 
             return new Olive.Security.GenericLoginInfo
             {
@@ -23,8 +22,8 @@ namespace System
                 Email = @this.Email,
                 ID = @this.ID.ToString(),
                 Roles = @this.Roles.Split(',').Trim().ToArray(),
-                Timeout = timeOut
-            }.LogOn(remember: isSmartPhone);
+                Timeout = mobile ? MobileTimeout.Minutes() : Timeout.Minutes()
+            }.LogOn(remember: mobile);
         }
 
         public static Domain.Feature[] SubItems(this Domain.Feature @this)

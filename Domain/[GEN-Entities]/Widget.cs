@@ -21,7 +21,7 @@
         /* -------------------------- Constructor -----------------------*/
         
         /// <summary>Initializes a new instance of the Widget class.</summary>
-        public Widget() => Saving.Handle(Widget_Saving);
+        public Widget() => Saving += (ev) => ev.Do(Widget_Saving);
         
         /* -------------------------- Properties -------------------------*/
         

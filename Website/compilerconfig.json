@@ -6,9 +6,5 @@
   {
     "outputFile": "wwwroot/Styles/webForms.css",
     "inputFile": "wwwroot/Styles/webForms.scss"
-  },
-  {
-    "outputFile": "wwwroot/scripts/bundle-built.min.js",
-    "inputFile": "wwwroot/scripts/bundle-built.js"
   }
 ]

@@ -15,9 +15,6 @@ export default class WidgetModule {
 
     enableWidget(): void {
 
-        //hide right task menu here
-         $(".task-bar").removeClass("d-lg-flex");
-
         this.input.append("<br/>loading...");
 
         $.ajax({

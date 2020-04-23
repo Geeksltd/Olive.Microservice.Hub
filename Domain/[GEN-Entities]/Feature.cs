@@ -12,6 +12,7 @@
     
     /// <summary>Represents an instance of Feature entity type.</summary>
     [TransientEntity]
+    [SkipAutoSort]
     [EscapeGCop("Auto generated code.")]
     public partial class Feature : GuidEntity, IComparable<Feature>, IHierarchy, ISortable
     {
@@ -21,7 +22,7 @@
         /* -------------------------- Constructor -----------------------*/
         
         /// <summary>Initializes a new instance of the Feature class.</summary>
-        public Feature() => Saving.Handle(Feature_Saving);
+        public Feature() => Saving += (ev) => ev.Do(Feature_Saving);
         
         /* -------------------------- Properties -------------------------*/
         

@@ -48,6 +48,7 @@ import 'datepicker';
 import 'bootstrapToggle';
 import 'bootstrap-select';
 import 'flickity';
+import 'underscore';
 
 export default class AppPage extends OlivePage {
 
@@ -64,10 +65,6 @@ export default class AppPage extends OlivePage {
 
         ExpandCollapse.enableExpandCollapse($("#sidebarCollapse"));
         ExpandCollapse.enableExpandCollapse($("#taskBarCollapse"));
-        $(() => {
-            // set global search focused
-            $("input.global-search").each((i, e: any) => e.focus());
-        });
 
         $("#iFrameHolder").hide();
         $("iframe.view-frame").attr("src", "").attr("style", "");

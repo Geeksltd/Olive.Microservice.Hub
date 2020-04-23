@@ -20,6 +20,8 @@
 
     public abstract class BaseStartup : Olive.Mvc.Startup
     {
+        string[] Subdomains;
+
         public BaseStartup(IHostingEnvironment env, IConfiguration config, ILoggerFactory factory) : base(env, config, factory)
         {
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.DefaultThreadCurrentUICulture =
@@ -29,8 +31,6 @@
         }
 
         protected override CultureInfo GetRequestCulture() => new CultureInfo("en-GB");
-
-        string[] Subdomains;
 
         public override void ConfigureServices(IServiceCollection services)
         {
@@ -55,7 +55,6 @@
 
             services.AddDataAccess(x => x.SqlServer());
             services.AddScheduledTasks<BackgroundTask>();
-
         }
 
         public override void Configure(IApplicationBuilder app)

@@ -19,7 +19,7 @@
         /* -------------------------- Constructor -----------------------*/
         
         /// <summary>Initializes a new instance of the UserInfo class.</summary>
-        public UserInfo() => Deleting.Handle(Cascade_Deleting);
+        public UserInfo() => Deleting += (ev) => ev.Do(Cascade_Deleting);
         
         /* -------------------------- Properties -------------------------*/
         

@@ -152,7 +152,7 @@ namespace Domain
             if (Description.HasValue()) return Description;
             if (Children.None()) return string.Empty;
 
-            return Children.Select(x => x.GetDescription().Or(x.Title)).Trim().Distinct().ToString(", ");
+            return Children.Select(x => x.GetDescription().Or(x.Title)).Trim().Distinct().ToString(", ").Summarize(100);
         }
 
         public class DataProvider : LimitedDataProvider

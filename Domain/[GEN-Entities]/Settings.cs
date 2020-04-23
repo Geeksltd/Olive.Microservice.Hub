@@ -23,9 +23,9 @@
         /// <summary>Initializes a new instance of the Settings class.</summary>
         public Settings()
         {
-            Saving.HandleWith(ClearCachedInstances);
-            Saved.HandleWith(ClearCachedInstances);
-            Database.CacheRefreshed.HandleWith(ClearCachedInstances);
+            Saving += (ev) => ClearCachedInstances();
+            Saved += (ev) => ClearCachedInstances();
+            Database.CacheRefreshed += (ev) => ClearCachedInstances();
         }
         
         /* -------------------------- Properties -------------------------*/

@@ -7,12 +7,13 @@ export default class BadgeNumber {
     }
 
     public static enableBadgeNumber(selector: JQuery) {
-        selector.each((i, e) => new BadgeNumber($(e)).enableBadgeNumber());
+        selector.each((i, e) => new BadgeNumber($(e)).enableBadgeNumber(3));
     }
 
-    enableBadgeNumber(): void {
+    enableBadgeNumber(attempts: number): void {
         let path = this.input.attr("data-badgeurl");
         if (!path) return;
+        if (this.input.is(":hidden") && window.innerWidth < 900) return;
 
         $.ajax({
             url: path,
@@ -48,8 +49,10 @@ export default class BadgeNumber {
                 }
             },
             error: (response) => {
-                console.error("BadgeUrl failed: " + path);
-                console.log(response);
+                if (attempts <= 0) {
+                    console.error("BadgeUrl failed after 3 attempts: " + path);
+                    console.log(response);
+                } else this.enableBadgeNumber(attempts - 1);
             }
         });
     }

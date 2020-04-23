@@ -51,9 +51,7 @@ export default class HubUrl extends Url {
 
             serviceContainer.attr("of", "Hub");
 
-            //hide or show right task menu
-            if (!$(".task-bar").hasClass("d-lg-flex"))
-                $(".task-bar").addClass("d-lg-flex");
+            $(".task-bar").addClass("d-lg-flex");
         }
 
         //URL is absolute for sure

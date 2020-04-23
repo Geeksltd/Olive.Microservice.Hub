@@ -8,10 +8,15 @@
     using Olive.Mvc;
     using System;
     using System.ComponentModel;
+    using System.Linq;
+    using System.Net;
+    using System.Net.Sockets;
     using System.Threading.Tasks;
 
     public class SharedActionsController : BaseController
     {
+        const int MaxFileLength = 260;
+
         [Route("healthcheck")]
         public async Task<ActionResult> HealthCheck()
         {
@@ -37,7 +42,7 @@
 
             // var file = Request.Files[0];
             var path = System.IO.Path.Combine(FileUploadService.GetFolder(Guid.NewGuid().ToString()).FullName, files[0].FileName.ToSafeFileName());
-            if (path.Length >= 260)
+            if (path.Length >= MaxFileLength)
                 return Json(new { Error = "File name length is too long." });
 
             var result = await new FileUploadService().TempSaveUploadedFile(files[0]);

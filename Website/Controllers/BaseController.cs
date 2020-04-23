@@ -11,7 +11,7 @@ namespace Olive.Hub
     {
         public BaseController()
         {
-            ApiClient.FallBack.Handle(arg => Notify(arg.FriendlyMessage, false));
+            ApiClient.FallBack += arg => Notify(arg.Args.FriendlyMessage, false);
         }
 
         [NonAction]

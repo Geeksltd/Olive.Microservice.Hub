@@ -22,7 +22,7 @@ namespace Olive.Hub
             }
 
             if (!user.IsActive)
-                throw new Exception("<li>Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologies for the inconvenience.</li>");
+                throw new Exception("<li>Your account is currently deactivated. It might be due to security concerns on your account. Please contact the system administrator to resolve this issue. We apologise for the inconvenience.</li>");
 
             await user.LogOn();
         }
@@ -35,73 +35,25 @@ namespace Olive.Hub
                 if (remoteError.HasValue())
                     return await Error($"Error from external provider: {remoteError}");
 
-                Log.Info("Authenticating ...");
                 var info = await HttpContext.AuthenticateAsync();
-                Log.Info("Authenticated ...");
-
-                Log.Info("Download google.com");
-                var content = await "http://www.google.com".AsUri().Download();
-                Log.Info(content);
-
-                foreach (var header in Request.Headers)
-                    Log.Info(">>>>>" + header.Key + " " + header.Value);
-
-
-                Log.Info(">>>>> RemoteIpAddress " + Request.HttpContext.Connection.RemoteIpAddress);
-                Log.Info(">>>>> Scheme " + Request.Scheme);
-                Log.Info(">>>>> Host " + Request.Host);
-                Log.Info(">>>>> Body " + await Request.Body.ReadAllText());
-
-                Log.Info(">>>>> Cookies ");
-                foreach (var item in Request.GetCookies())
-                    Log.Info(">>>>> Cookie " + item.Key + " " + item.Value);
-
-                Log.Info(">>>>> Info.Succeeded " + info.Succeeded);
-                Log.Info(">>>>> Info.Principal " + info.Principal);
-                Log.Info(">>>>> Info.Ticket " + info.Ticket);
-                Log.Info(">>>>> Info.Failure " + info.Failure);
-
-                Log.Info(">>>>> Info.Parameters ");
-                foreach (var item in (info.Properties?.Parameters).OrEmpty())
-                    Log.Info(item.Key + " " + item.Value);
-
-                Log.Info(">>>>> Info.Items ");
-                foreach (var item in (info.Properties?.Items).OrEmpty())
-                    Log.Info(item.Key + " " + item.Value);
-
-                Log.Info(">>>>> Info.Parameters.ExpiresUtc " + info.Properties?.ExpiresUtc);
-                Log.Info(">>>>> Info.Parameters.IsPersistent " + info.Properties?.IsPersistent);
-                Log.Info(">>>>> Info.Parameters.IssuedUtc " + info.Properties?.IssuedUtc);
-                Log.Info(">>>>> Info.Parameters.RedirectUri " + info.Properties?.RedirectUri);
-
-                // Log.Info(Newtonsoft.Json.JsonConvert.SerializeObject(info));
 
                 if (info == null || !info.Succeeded)
-                {
                     return Redirect($"/login?returnUrl={returnUrl}");
-                }
 
-                var issuer = info.Principal.GetFirstIssuer();
                 var email = info.Principal.GetEmail();
 
                 if (email.IsEmpty())
-                {
                     return await Error("Google did not return your email to us.");
-                }
 
                 try
                 {
                     var user = Database.FirstOrDefault<PeopleService.UserInfo>(f => f.Email == email);
-                    if (user == null)
-                        return Redirect("/login");
+                    if (user == null) return Redirect("/login");
 
-                    Console.WriteLine("*********************111 " + email);
                     await TryLogin(email);
-                    Console.WriteLine("********************* " + email);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("********************* ERROR: " + email);
                     return await Error(ex.Message);
                 }
 
@@ -123,7 +75,6 @@ namespace Olive.Hub
 
         async Task<ActionResult> Error(string message)
         {
-            // throw new Exception();
             var manual = new vm.ManualLogin();
             await TryUpdateModelAsync(manual);
 

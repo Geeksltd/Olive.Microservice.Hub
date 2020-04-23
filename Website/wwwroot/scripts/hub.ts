@@ -35,7 +35,9 @@ export default class Hub implements IService {
 
         //initial right task menu after 3 sec delay.
         setTimeout(() => {
-            $("#taskiFram").attr("src", $("#taskiFram").attr("src"));
+            var iframe = $("#taskiFram");
+            if (iframe.is(":visible") && iframe.attr("data-src"))
+                iframe.attr("src", iframe.attr("data-src")).removeAttr("data-src");
         }, 2000);
 
         //this function deal with touch events for task system.
@@ -46,8 +48,6 @@ export default class Hub implements IService {
     }
 
     loadServiceHealthChecks(): void {
-        console.log($(".service-tiles .tile").length);
-        console.log("test");
 
         $(".service-tiles .tile").each((inx, item) => {
             var _this = $(item);

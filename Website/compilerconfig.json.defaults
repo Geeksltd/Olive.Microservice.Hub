@@ -16,11 +16,6 @@
       "enabled": true,
       "termSemicolons": true,
       "gzip": false
-    },
-    "javascript": {
-      "enabled": true,
-      "termSemicolons": true,
-      "gzip": false
     }
   }
 }

@@ -20,8 +20,8 @@
         /// <summary>Initializes a new instance of the Service class.</summary>
         public Service()
         {
-            Saving.HandleWith(ClearCachedInstances);
-            Saved.HandleWith(ClearCachedInstances);
+            Saving += (ev) => ClearCachedInstances();
+            Saved += (ev) => ClearCachedInstances();
         }
         
         /* -------------------------- Properties -------------------------*/
